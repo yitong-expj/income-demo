@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {cents,calculate} from '../finance.js';
+const e=amount=>({name:'测试',amount});
+test('结余和储蓄率',()=>{const r=calculate('10000',[e('3000'),e('2000')]);assert.equal(r.balance,500000);assert.equal(r.rate,50);assert.equal(r.items[0].amount/r.total,.6);});
+test('超支',()=>{const r=calculate('100',[e('120')]);assert.equal(r.balance,-2000);assert.equal(r.rate,-20);});
+test('零收入和空白',()=>{assert.equal(calculate('',[]).rate,null);assert.equal(calculate('0',[e('1')]).balance,-100);assert.equal(cents(''),0);});
+test('小数精度',()=>assert.equal(calculate('1',[e('0.10'),e('0.20')]).balance,70));
+test('非法金额',()=>{for(const v of ['-1','NaN','Infinity','1e3','1.001','1000000000','hello'])assert.throws(()=>cents(v));});
+test('金额上界',()=>assert.equal(cents('999999999.99'),99999999999));
+test('分类和数量校验',()=>{assert.throws(()=>calculate('1',[{name:' ',amount:'0'}]));assert.throws(()=>calculate('1',Array(31).fill(e('1'))));assert.equal(calculate('1',Array(30).fill(e('999999999.99'))).total,2999999999970);});
