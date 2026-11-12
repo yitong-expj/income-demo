@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f1e9"><title>月有余 · 每月收支小工具</title><link rel="stylesheet" href="./style.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f8fa"><title>月有余 · 每月收支小工具</title><link rel="stylesheet" href="./style.css"></head>
 <body>
-<header><a class="brand" href="./"><span class="logo">余</span> 月有余 <small>MONTHLY NOTES</small></a><span class="edition">把生活，过得有余量。</span></header>
+<header><a class="brand" href="./"><span class="logo">余</span> 月有余 <small>A LITTLE MORE</small></a><span class="edition">本地保存 · 安心记录</span></header>
 <main>
-<section class="intro"><div><p class="eyebrow">YOUR MONEY, AT A GLANCE</p><h1>每一笔，都心中有数<span>。</span></h1><p>记下这个月的收入与支出，看看为未来留下了多少。</p></div><button id="example" class="secondary">试试示例 ↗</button></section>
+<section class="intro"><div><p class="eyebrow">MAKE ROOM FOR WHAT MATTERS</p><h1>给生活，多一点余量<span>。</span></h1><p>记下这个月的收入与支出，看看为未来留下了多少。</p></div><button id="example" class="secondary">载入示例 ↗</button></section>
 <div class="workspace">
 <section class="entry panel"><div class="section-title"><h2><span>01</span> 本月收支</h2><span class="unit">人民币 / 元</span></div>
 <label class="income-label" for="income">每月收入</label><div class="income-box"><span>¥</span><input id="income" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-describedby="error"></div>
 <div class="section-title expenses-heading"><h3>各项支出</h3><span class="unit">按你的生活方式分类</span></div>
 <div id="expenses"></div><button id="add" class="add">＋ 添加一项支出</button><p id="error" role="alert"></p>
 <div class="entry-footer"><span id="storage" role="status">仅保存在此浏览器</span><button id="clear" class="text-button">清空数据</button></div></section>
-<section class="overview"><div class="balance-card" aria-live="polite"><p class="eyebrow">留给未来的余量</p><h2>本月结余</h2><div class="balance-value"><span>¥</span><strong id="balance">0.00</strong></div><p id="insight">输入收支，开始了解你的这个月。</p><div class="metrics"><div><span>总支出</span><strong id="total">¥ 0.00</strong></div><div><span>储蓄率</span><strong id="rate">—</strong></div></div></div>
+<section class="overview"><div class="balance-card" aria-live="polite"><p class="eyebrow">YOUR MONTHLY BALANCE</p><h2>本月结余 <span aria-hidden="true">↗</span></h2><div class="balance-value"><span>¥</span><strong id="balance">0.00</strong></div><p id="insight">输入收支，开始了解你的这个月。</p><div class="metrics"><div><span>总支出</span><strong id="total">¥ 0.00</strong></div><div><span>储蓄率</span><strong id="rate">—</strong></div></div></div>
 <div class="chart-card panel"><div class="section-title"><h2><span>02</span> 支出分布</h2><span class="unit">占总支出比例</span></div><div class="chart-content"><div id="chart" role="img" aria-label="暂无支出"><div class="chart-hole"><span>总支出</span><strong id="chart-total">¥ 0.00</strong></div></div><div id="legend"><p class="empty">还没有支出<br>每一笔开销，都将在这里呈现。</p></div></div></div></section>
 </div><footer><span>小小记录，让生活更从容。</span><span>本地保存 · 无需登录 · 不上传收支数据</span></footer>
 </main><script type="module" src="./app.js"></script></body></html>
